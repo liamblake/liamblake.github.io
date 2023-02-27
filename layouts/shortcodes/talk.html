@@ -1,0 +1,9 @@
+
+<p>
+<em>{{ .Get 0 }}</em> <span style="float:right;">{{ .Get 1 }}</span><br>
+{{ .Get 3 }} <span style="float:right;">{{ .Get 2 }} </span>
+	</p>
+<details>
+  <summary>Abstract</summary>
+		{{ .Inner | markdownify }}
+</details>
