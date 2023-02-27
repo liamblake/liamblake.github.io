@@ -1,0 +1,8 @@
+baseURL = 'http://liamblake.github.io/'
+languageCode = 'en-us'
+title = 'Liam Blake'
+theme = 'apero'
+
+[params]
+  textFontFamily = "sans-serif"
+  headingFontFamily = "serif"
