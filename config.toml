@@ -6,3 +6,15 @@ theme = 'apero'
 [params]
   textFontFamily = "sans-serif"
   headingFontFamily = "serif"
+
+[menu]
+	[[menu.header]]
+		name = "Research"
+		title = "Research & Publications"
+		url = "/research/"
+		weight = 1
+	[[menu.header]]
+    name = "Talks"
+    title = "Talks"
+    url = "/talks/"
+    weight = 2
