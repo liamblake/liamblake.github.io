@@ -31,7 +31,7 @@ theme = 'apero'
 	[[menu.header]]
 		name = "Research"
 		title = "Research & Publications"
-		url = "/research/"
+		url = "/research"
 		weight = 2
 	[[menu.header]]
     name = "Talks"

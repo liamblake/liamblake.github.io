@@ -1,6 +1,6 @@
 ---
 title: Research
-layout: wide-body
+layout: "standalone"
 ---
 
 ## Publications

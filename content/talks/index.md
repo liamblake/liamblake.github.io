@@ -1,6 +1,6 @@
 ---
 title: Talks
-layout: wide-body
+layout: page
 ---
 A collection of talks and seminars I've given. Some more formal than others. Slides are provided where available.
 
