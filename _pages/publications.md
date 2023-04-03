@@ -7,12 +7,5 @@ years: [1967, 1956, 1950, 1935, 1905]
 nav: true
 nav_order: 1
 ---
-<!-- _pages/publications.md -->
-<div class="publications">
 
-{%- for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
-
-</div>
+- **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2023). *Explicit Gaussian characterisation of uncertainty in the limit of small noise*. Submitted for publication.
