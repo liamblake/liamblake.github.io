@@ -33,18 +33,24 @@ body.sticky-bottom-footer {
   }
 }
 
-// TODO: redefine content layout.
+
+// Talks 
 
 
-/******************************************************************************
- * Publications
- ******************************************************************************/
+ul.talk li {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	row-gap: 0px;
+}
 
-// TODO: redefine publications layout.
+.talk-row {
+	display: flex;
+	justify-content: space-between;
+}
 
-
-/*****************************************************************************
-* Projects
-*****************************************************************************/
-
-// TODO: redefine projects layout.
+.talk-links {
+	display: flex;
+	justify-content: left;
+	gap: 10px;
+}
