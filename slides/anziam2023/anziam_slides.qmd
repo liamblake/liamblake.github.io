@@ -1,0 +1,581 @@
+```{julia}
+using DifferentialEquations
+using LaTeXStrings
+using Plots
+using LinearAlgebra
+
+A = 1.0
+c = 0.5
+K = 4.0
+l₁ = 2.0
+c₁ = π
+k₁ = 1.0
+ϵ = 0.3
+
+function rossby(dx, x, _, t)
+    dx[1] = c-A*sin(K * x[1])*cos(x[2])+ϵ*l₁*sin(k₁ * (x[1] - c₁ * t))*cos(l₁ * x[2])
+    dx[2] = A*K*cos(K * x[1])*sin(x[2])+ϵ*k₁*cos(k₁ * (x[1] - c₁ * t))*sin(l₁ * x[2])
+    nothing
+end
+
+function bivariate_std_dev(μ, Σ; nσ = 1, plt = plot(), colour = :black, args...)
+    # Calculate the first two principal axes of the covariance matrix
+    # These correspond to the major and minor axes of the ellipse
+    evals, evecs = eigen(Σ)
+
+    # Angle of rotation - use the principal axis
+    θ = atan(evecs[2, 1], evecs[1, 1])
+
+    # Magnitude of major and minor axes
+    a, b = sqrt.(evals[1:2])
+
+    # Plot each contour
+    for n = 1:nσ
+        # Parametric equations for the resulting ellipse
+        # TODO: Should be a way to calculate this by operating directly on the eigenvectors
+        # i.e. x = cos(θ), y = sin(θ)
+        x = t -> n * (a * cos(t) * cos(θ) - b * sin(t) * sin(θ)) + μ[1]
+        y = t -> n * (a * cos(t) * sin(θ) + b * sin(t) * cos(θ)) + μ[2]
+
+        plot!(x, y, 0, 2π, linecolor = colour; args...)
+    end
+
+    # Also plot the mean
+    scatter!([μ[1]], [μ[2]], markersize = 3, markercolor = colour, label = "")
+
+    return plt
+
+end;
+
+function star_grid(x::AbstractVector, δx::Float64)::Array{Float64}
+    n = length(x)
+
+    # Matrix of coordinate shifts
+    # ⌈1  0  0  0  ⋯ 0⌉
+    # |-1 0  0  0  ⋯ 0|
+    # |0  1  0  0  ⋯ 0|
+    # |0  -1 0  0  ⋯ 0|
+    # |⋮     ⋱       ⋮|
+    # |0  ⋯     0  ⋯ 1|
+    # ⌊0  ⋯     0  ⋯ 0⌋
+    A = zeros(2 * n, n)
+    A[1:(2*n+2):(2*n^2)] .= 1
+    A[2:(2*n+2):(2*n^2)] .= -1
+
+    return repeat(x', 2 * n) + δx * A
+end
+
+"""
+    ∇F(star_values::Array{Float64}, n::UInt8, δx::Float64)::Array{Float64}x)
+
+Approximate the flow map gradient with a centered finite-difference
+approximation, given a star grid of values.
+"""
+function ∇F(star_values, n, δx::Float64)::Array{Float64}
+    return 1 / (2 * δx) * (star_values[1:2:(2*n), :] - star_values[2:2:(2*n), :])'
+end
+
+function Σ_calculation(
+    x₀::AbstractVector,
+    t₀::Float64,
+    T::Float64,
+    dt::Float64,
+    dx::Float64,
+	)
+
+	d = 2
+  ts = t₀:dt:T
+
+	# TODO: This calculation sometimes doesn't work and is off by 1.
+  # First, advect the initial condition forward to obtain the deterministic trajectory
+  prob = ODEProblem(rossby, x₀, (t₀, T))
+  det_sol = solve(prob, Euler(), dt = dt)
+
+  w = last(det_sol)
+  Fs = reverse(det_sol.u)
+
+  # Form the star grid around the final position
+  star = star_grid(w, dx)
+
+  # Advect these points backwards to the initial time
+  prob = ODEProblem(rossby, star[1, :], (T, t₀))
+  ensemble =
+      EnsembleProblem(prob, prob_func = (prob, i, _) -> remake(prob, u0 = star[i, :]))
+  sol = solve(
+      ensemble,
+      Euler(),
+      EnsembleThreads(),
+      dt = dt,
+      # saveat = dt,
+      trajectories = 4,
+  )
+
+
+  # Permute the dimensions of the ensemble solution so star_values is indexed
+  # as (timestep, gridpoint, coordinate).
+  star_values = Array{Float64}(undef, length(sol[1]), 2 * 2, 2)
+  permutedims!(star_values, Array(sol), [2, 3, 1])
+
+  # Approximate the flow map gradient at each time step
+  ∇Fs = ∇F.(eachslice(star_values, dims = 1), 2, dx)
+
+  # TODO: Work with non-identity σ
+  Ks = inv.(∇Fs)
+  integrand = Ks .* transpose.(Ks)
+
+  # Approximate an integral given discrete evaluations, using the composite Simpson's rule
+  # Assume the data is equidistant with respect to the variable being integrate.
+  feven = @view integrand[2:2:end]
+  fodd = @view integrand[1:2:end]
+
+  Σ = dt / 3 * (integrand[1] + 2 * sum(feven) + 4 * sum(fodd) + last(integrand))
+
+	return w, Σ
+
+end;
+```
+
+<!-- Gratefully supported by:
+
+- an Australian Government Research Training Program Scholarship,
+
+- the School of Computer and Mathematical Sciences, The University of Adelaide, and
+
+- the ANZIAM Student Support Scheme.
+
+
+## -->
+We are interested in a state variable $w_t \in \mathbb{R}^n$
+
+. . .
+
+Our **best available** model is
+
+$$
+\frac{\mathrm{d}w_t}{\mathrm{d}t} = u\left(w_t, t\right), \quad w_0 = x,
+$$
+for $t \in [0,T]$.
+
+. . .
+
+Solutions are summarised by the **flow map** $F_0^t(x) \equiv w_t$.
+
+##
+**An example:** Rossby wave with oscillatory perturbation in 2D [@SamelsonWiggins_2006_LagrangianTransportGeophysical].
+
+. . .
+
+```{julia}
+t₀ = 0.0
+T = 2.1
+
+x₀ = [0.0, 1.0]
+prob = ODEProblem(rossby, x₀, (t₀, T))
+sol = solve(prob)
+w = last(sol)
+
+p = plot(sol; idxs = (1, 2), legend = false, linecolor = :black, linewidth = 2, grid = false, showaxis = false, ticks =[], xlims = (-0.1, 2.1))
+scatter!([0.0, w[1]], [1.0, w[2]], markercolor = :black, linecolor = :black)
+plot!(p, annotation = [(-0.04, 0.94, (L"x", 24, :black, :bottomleft)), (w[1] + 0.13, w[2], (L"F_{\!0}^{t}\!(x)", 24, :black, :topright))])
+
+p
+```
+
+:::{.notes}
+- Idealised model of Rossby waves observed in the atmosphere and ocean.
+
+- The velocity field is given analytically.
+
+- Here we have one such determinstic trajectory - we fix an initial condition x, and solve the ODE numerically to get the corresponding prediction at time t, F_0^t(x)
+
+:::
+
+<!-- Sometimes, the flow map is all we have available. -->
+
+<!-- ##
+**An example:** Rossby wave with oscillatory perturbation [@SamelsonWiggins_2006_LagrangianTransportGeophysical]
+
+```{julia}
+p = plot(sol; idxs = (1, 2), legend = false, linecolor = :gray, linewidth = 1, grid = false, showaxis = false, ticks =[], xlims = (-0.1, 2.1))
+
+prob = remake(prob, u0 = [0.2, 1.0])
+sol2 = solve(prob)
+plot!(p, sol2, linecolor = :black, linewidth = 2)
+
+p
+```
+ -->
+
+##
+
+But there is unavoidable uncertainty...
+
+:::{.incremental}
+
+- Observation error in $u$
+
+- Discretisation and interpolation error
+
+- Other unexplainable phenomena
+
+:::
+<!-- ##
+
+**Stochastic parameterisation:** unresolved processes are modelled as stochastic components [@BernerEtAl_2017_StochasticParameterizationNew].
+
+. . .
+
+Used in state-of-the-art weather forecasting [@LeutbecherEtAl_2017_StochasticRepresentationsModel]. -->
+
+<!-- ##
+Model the noise as the canonical $n$-dimensional Wiener process $W_t$:
+
+$$
+W_s - W_t \sim \mathcal{N}\left(0, (s - t) I\right)
+$$
+
+##
+$$
+\frac{\mathrm{d}y_t}{\mathrm{d}t} = u\left(y_t, t\right) + \epsilon\sigma\left(y_t, t\right)\frac{\mathrm{d}W_t}{\mathrm{d}t}
+$$ -->
+
+##
+
+How can we model the uncertainty in $F_0^t$?
+
+##
+
+$$
+\frac{dy_t}{dt} = u\left(y_t, t\right) + \text{``noise''}
+$$
+
+. . .
+
+**Multiplicative noise** is needed in practice [e.g. @SuraEtAl_2005_MultiplicativeNoiseNonGaussianity]
+
+. . .
+
+$$
+\frac{dy_t}{dt} = u\left(y_t, t\right) + \varepsilon\sigma\left(y_t, t\right) \cdot \text{``noise''}
+$$
+
+where $0 < \varepsilon \ll 1$.
+
+
+:::{.notes}
+Examples for multiplicative noise
+
+- Cloud cover in satellite imagery
+
+- Uncertainty as a function of velocity, say
+
+- Uncertainty in parameters
+
+:::
+
+
+##
+Use the Wiener process $W_t$;
+$$
+W_s - W_t \sim \mathcal{N}\left(0, (s - t)I_n\right).
+$$
+
+:::{.notes}
+Mention $I_n$.
+
+:::
+
+##
+Formalise as an Itô stochastic differential equation (SDE)
+$$
+\mathrm{d}y_t = u\left(y_t, t\right)\mathrm{d}t + \varepsilon\sigma\left(y_t, t\right)\mathrm{d}W_t, \quad y_0 = x.
+$$
+
+. . .
+
+This is the *true* model.
+
+##
+Some key properties (e.g. @KallianpurSundar_2014_StochasticAnalysisDiffusion):
+
+:::{.incremental}
+- Unique solutions exist.
+
+- The solution $y_t$ is now a **stochastic process**.
+:::
+<!-- ::: {.incremental}
+
+- The solution $y_t$ is now a **stochastic process**.
+
+- Under sufficient Lipschitz-like and measurability conditions on $u$ and $\sigma$, unique solutions exist.
+
+- $y_t$ is continuous almost-surely.
+
+::: -->
+
+##
+$$
+\mathrm{d}y_t = u\left(y_t, t\right)\mathrm{d}t + \varepsilon\sigma\left(y_t, t\right)\mathrm{d}W_t, \quad y_0 = x.
+$$
+
+. . .
+
+Solving SDEs is hard.
+
+. . .
+
+We can only solve analytically in a few very specific cases.
+
+. . .
+
+We can solve numerically to obtain samples [e.g. @KloedenPlaten_1992_NumericalSolutionStochastic], but this is computationally expensive.
+
+##
+
+Any theoretical insight into the behaviour of $y_t$ is valuable.
+
+
+##
+$$
+\set{y_\tau}_{\tau \in [0,t]}
+$$
+
+```{julia}
+ε = 0.04
+function σ!(dW, _, ε, _)
+  dW[1,1] = dW[2,2] = ε
+  dW[1,2] = dW[2,1] = 0.0
+  nothing
+end
+
+N = 10000
+Nₚ = 100
+ens_prob = EnsembleProblem(SDEProblem(rossby, σ!, x₀, (0.0, 2.0), ε, noise_rate_prototype = zeros(2, 2)))
+ens_sol = solve(ens_prob, EM(), EnsembleThreads(), dt = 0.001, trajectories = N)
+
+final_pos = Array{Float64}(undef, N, 2)
+
+p = plot()
+for n in 1:N
+  es = ens_sol[n]
+  final_pos[n, :] = last(es)
+  if n <= Nₚ
+    plot!(p, es, idxs = (1,2), linecolor = :red, alpha = 0.3)
+  end
+end
+plot!(p, sol, idxs = (1,2), legend = false, linecolor = :black, xlims = (-0.1, 2), grid = false, showaxis = false, ticks =[])
+scatter!(p, [0.0, w[1]], [1.0, w[2]], markercolor = :black, linecolor = :black)
+p
+```
+
+##
+$$
+y_t
+$$
+
+```{julia}
+q = histogram2d(final_pos[:, 1], final_pos[:, 2], bins = 100, c = cgrad(:spring, rev = true), cbar = false,grid = false, showaxis = false, ticks =[], legend = false)
+plot!(q, sol, idxs = (1,2), legend = false, linecolor = :black, grid = false, showaxis = false, ticks =[], xlims = (-0.1, xlims(q)[2]))
+scatter!(q, [0.0, w[1]], [1.0, w[2]], markercolor = :black, linecolor = :black)
+q
+```
+
+##
+$$
+y_t \sim \,???
+$$
+
+```{julia}
+q = histogram2d(final_pos[:, 1], final_pos[:, 2], bins = 100, c = cgrad(:spring, rev = true), cbar = false,grid = false, showaxis = false, ticks =[], legend = false)
+scatter!(q, [w[1]], [w[2]], markercolor = :black, linecolor = :black)
+q
+```
+
+
+##
+Extending the approach of @Balasuriya_2020_StochasticSensitivityComputable
+
+. . .
+
+$$
+z_t^{(\varepsilon)}(x) \coloneqq \frac{y_t - F_0^t(x)}{\varepsilon}
+$$
+
+. . .
+
+:::{.center}
+What happens as $\varepsilon \to 0$?
+:::
+
+:::{.notes}
+
+
+:::
+
+##
+
+Define $z_t(x)$ as the solution to the linearised SDE.
+$$
+\mathrm{d}z_t(x) = \nabla u\left(F_0^t(x), t\right)z_t(x) \mathrm{d}t + \sigma\left(F_0^t(x), t\right)\mathrm{d}W_t.
+$$
+
+
+. . .
+
+We can solve this explicitly
+
+. . .
+
+$$
+z_t(x) \sim \mathcal{N}\left(0, \Sigma(x,t)\right).
+$$
+
+##
+
+We have rigorously shown that
+$$
+z_t^{(\varepsilon)}(x) \xrightarrow{\text{mean}} z_t(x), \quad\text{as } \varepsilon\downarrow 0
+$$
+
+. . .
+
+so for small $\varepsilon$,
+$$
+z_t^{(\varepsilon)}(x) \,\dot\sim\, z_t(x).
+$$
+
+. . .
+
+or equivalently
+$$
+y_t^{(\varepsilon)}(x) \,\dot\sim\, F_0^t(x) + \varepsilon z_t(x).
+$$
+
+
+
+##
+
+$$
+y_t \,\dot\sim\, \mathcal{N}\left(F_0^t(x), \varepsilon^2\Sigma(x,t)\right) \\
+$$
+
+. . .
+
+$$
+\Sigma\left(x,t\right) = \int_0^t{L\left(x, t, \tau\right)L\left(x, t, \tau\right)^{T}\mathrm{d}\tau}
+$$
+$$
+L(x, t, \tau) = {\color{white}\underbrace{\color{black}\left[\nabla F_0^t(x)\right]^{-1} \nabla F_0^\tau(x)}_{\text{model dynamics}}}{\color{white}\underbrace{\color{black}\sigma\left(F_0^\tau(x), \tau\right)}_{\text{multiplicative noise}}}
+$$
+
+:::{.notes}
+Emphasise **computable**
+:::
+
+##
+
+$$
+y_t \,\dot\sim\, \mathcal{N}\left(F_0^t(x), \varepsilon^2\Sigma(x,t)\right) \\
+$$
+$$
+\Sigma\left(x,t\right) = \int_0^t{L\left(x, t, \tau\right)L\left(x, t, \tau\right)^{T}\mathrm{d}\tau}
+$$
+$$
+L(x, t, \tau) = {\color{blue}\underbrace{\color{blue}\left[\nabla F_0^t(x)\right]^{-1} \nabla F_0^\tau(x)}_{\text{model dynamics}}}{\color{white}\underbrace{\color{black}\sigma\left(F_0^\tau(x), \tau\right)}_{\text{multiplicative noise}}}
+$$
+
+##
+
+$$
+y_t \,\dot\sim\, \mathcal{N}\left(F_0^t(x), \varepsilon^2\Sigma(x,t)\right) \\
+$$
+$$
+\Sigma\left(x,t\right) = \int_0^t{L\left(x, t, \tau\right)L\left(x, t, \tau\right)^{T}\mathrm{d}\tau}
+$$
+$$
+L(x, t, \tau) = {\color{white}\underbrace{\color{black}\left[\nabla F_0^t(x)\right]^{-1} \nabla F_0^\tau(x)}_{\text{model dynamics}}}{\color{blue}\underbrace{\color{blue}\sigma\left(F_0^\tau(x), \tau\right)}_{\text{multiplicative noise}}}
+$$
+
+
+##
+
+```{julia}
+ε = 0.03
+ts = [0.2, 0.4, 0.6, 0.8, 1.0]
+p = plot(grid = false, showaxis = false, ticks =[], legend = false)
+
+final_pos = Array{Float64}(undef, N, 2)
+ws = Vector{Vector{Float64}}(undef, length(ts))
+Σs = Vector{Matrix{Float64}}(undef, length(ts))
+
+for (i,t) in enumerate(ts)
+  w, Σ = Σ_calculation(x₀, 0.0, t, 0.001, 0.001)
+  ws[i] = w
+  Σs[i] = Σ
+
+  ens_prob = EnsembleProblem(SDEProblem(rossby, σ!, x₀, (0.0, t), ε, noise_rate_prototype = zeros(2, 2)))
+  ens_sol = solve(ens_prob, EM(), EnsembleThreads(), dt = 0.001, trajectories = N)
+
+  for n in 1:N
+    final_pos[n, :] = last(ens_sol[n])
+  end
+  histogram2d!(p, final_pos[:, 1], final_pos[:, 2], bins = 100, c = cgrad(:spring, rev = true), cbar = false)
+end
+
+# Plot the trajectory
+plot!(p, sol, idxs = (1,2), tspan = (0, maximum(ts)), linecolor = :gray, linewidth = 0.5, xlims = (0.0, 1.1), ylims = (0.4, 2.5))
+
+# Plot the covariance bounds
+for i in 1:length(ts)
+  bivariate_std_dev(ws[i], ε^2*Σs[i]; nσ = 2, plt = p, colour = :black)
+end
+
+p
+```
+
+
+
+## References {.smaller}
+::: {#refs}
+:::
+
+
+##
+
+<!-- Secret slides -->
+##
+For any $0 < \varepsilon \ll 1$, $x \in \mathbb{R}^n$, $t \in [0,T]$ and $r \geq 1$, there is a constant $D_r(t)$ such that
+$$
+\mathbb{E}\left[\left|\!\left|z_t^{(\varepsilon)}(x) - z_t(x)\right|\!\right|^r\right] \leq D_r(t)\varepsilon^r,
+$$
+so
+$$
+\lim_{\varepsilon \to 0} \mathbb{E}\left[\left|\!\left|z_t^{(\varepsilon)}(x) - z_t(x)\right|\!\right|^r\right] = 0.
+$$
+
+
+##
+
+Just a few future extensions/applications:
+
+- Uncertain initial conditions
+
+- Imperfect knowlege of $F_0^t(\cdot)$
+
+- Constructing efficient stochastic parameterisation schemes [@LeutbecherEtAl_2017_StochasticRepresentationsModel]
+
+- Measuring linearisation error of extended Kalman Filter
+
+- Extracting Lagrangian coherent structures
+
+- Bayesian inference of diffusivity $\sigma$
+
+
+##
+$$
+S^2(x,t) = \left|\!\left|\Sigma(x,t)\right|\!\right|
+$$
+
+<p center>
+![](robust.png)
+</p>
