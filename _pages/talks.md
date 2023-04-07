@@ -8,6 +8,7 @@ nav_order: 1
 
 A collection of talks I have given, some more formal than others. Slides and Github repositories are linked where available. 
 
+<!-- TODO: Add abstracts-->
 <ul class="talks">
   <li>
     <span class="talk-row">
