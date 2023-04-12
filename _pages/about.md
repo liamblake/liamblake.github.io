@@ -10,3 +10,4 @@ My [blog](/blog) consists of various posts on interesting bits of maths and prog
 
 I also provide a list of [talks](/talks) I have given over the years, from informal university seminars to conferences. I've included slides and links to any relevant code. 
 
+More details to come soon!
