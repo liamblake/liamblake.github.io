@@ -109,6 +109,14 @@ ul.talk li {
   gap: 10px;
 }
 
+.post-title {
+  text-align: left;
+}
+
+.post-desc {
+  text-align: justify;
+}
+
 /*******************************************************************************
  * Styles for the base elements of the theme.
  ******************************************************************************/
