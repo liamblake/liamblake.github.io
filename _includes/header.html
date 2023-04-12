@@ -58,6 +58,14 @@
 						</a>
 					</li>
 					{%- endif -%} {%- endif -%} {% endfor -%}
+					<!-- Blog -->
+					<li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
+						<a class="nav-link" href="{{ '/blog/' | relative_url }}">Blog {%- if page.url contains
+							'blog' -%}
+							<span class="sr-only">(current)</span>
+							{%- endif -%}
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
