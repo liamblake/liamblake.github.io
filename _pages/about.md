@@ -1,13 +1,22 @@
 ---
 layout: about
-title: About
+title: Home
 permalink: /
 ---
 
-Hi there! I'm currently a Master of Philosophy student researching new ways of characterising uncertainty in mathematical geophysical and climate models. See my [Research](/research) page for more details on the work I am doing.
+<center>
+Hi there! I'm an applied mathematician and postgraduate student currently researching new ways of characterising uncertainty in mathematical geophysical and climate models.
+Read my <a href="/blog">blog</a> and about my <a href="/research">research</a> for more details!
+</center>
+<br>
 
-My [blog](/blog) consists of various posts on interesting bits of maths and programming I come across and use.
-
-I also provide a list of [talks](/talks) I have given over the years, from informal university seminars to conferences. I've included slides and links to any relevant code. 
-
-More details to come soon!
+<center>
+<figure>
+    <video width="750" autoplay loop muted>
+        <source src="figures/single_gaussian.mp4" type="video/mp4">
+    </video>
+    <figcaption>
+        A Gaussian approximation of stochastic samples (in red) of a position in the Gulf Stream.
+    </figcaption>
+</figure>
+</center>

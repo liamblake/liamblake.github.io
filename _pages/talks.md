@@ -3,13 +3,26 @@ layout: page
 permalink: /talks/
 title: Talks
 nav: true
-nav_order: 1
+nav_order: 3
 ---
 
 A collection of talks I have given, some more formal than others. Slides and Github repositories are linked where available. 
 
 <!-- TODO: Add abstracts-->
 <ul class="talks">
+  <li>
+    <span class="talk-row">
+      <b>A Gaussian mixture model for uncertainty propagation in the North Atlantic</b> 16th
+      June 2023
+    </span>
+    <span class="talk-row">
+      <em>South Australian ANZIAM meeting</em> Adelaide, Australia
+    </span>
+    <span class="talk-links">
+      <a href="/slides/sa_anziam_2023/LBlake_slides.pptx">Slides</a>
+    </span>
+  </li>
+
   <li>
     <span class="talk-row">
       <b>Lagrangian Coherent Structures</b> 3rd March 2023
