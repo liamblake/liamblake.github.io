@@ -24,7 +24,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -58,20 +58,12 @@
 				<a href="https://orcid.org/0000-0003-2779-494X" title="Orcid" rel="external nofollow noopener" target="_blank"><i class="fab fa-orcid"></i></a>
 			</div>
 
-			<!-- Navbar Toggle -->
-			<button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar top-bar"></span>
-				<span class="icon-bar middle-bar"></span>
-				<span class="icon-bar bottom-bar"></span>
-			</button>
-
 			<div class="collapse navbar-collapse text-right" id="navbarNav">
 				<ul class="navbar-nav ml-auto flex-nowrap">
 
 					<!-- About -->
 					<li class="nav-item active">
-						<a class="nav-link" href="/">About<span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
 					</li>
 
 					<!-- Other pages -->
@@ -82,20 +74,14 @@
 						<a class="nav-link" href="/talks/">Talks</a>
 					</li>
 <!-- Blog -->
-					<li class="nav-item ">
-						<a class="nav-link" href="/blog/">Blog</a>
-					</li>
+					<!-- <li class="nav-item "> -->
+					<!-- 	<a class="nav-link" href="/blog/">Blog-->
+					<!-- 	</a> -->
+					<!-- </li> -->
 				</ul>
 			</div>
 		</div>
 	</nav>
-	
-	<!-- Scrolling Progress Bar -->
-	<progress id="progress" value="0">
-		<div class="progress-container">
-			<span class="progress-bar"></span>
-		</div>
-	</progress>
 </header>
 
 
@@ -103,20 +89,29 @@
     <div class="container mt-5">
       <!-- about.html -->
       <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-           Liam  Blake
-          </h1>
-        </header>
+        <!-- <header class="post-header"> -->
+        <!--   <h1 class="post-title"> -->
+        <!--    Liam  Blake -->
+        <!--   </h1> -->
+        <!-- </header> -->
 
           <div class="clearfix">
-            <p>Hi there! I’m currently a Master of Philosophy student researching new ways of characterising uncertainty in mathematical geophysical and climate models. See my <a href="/research">Research</a> page for more details on the work I am doing.</p>
+            <center>
+Hi there! I'm an applied mathematician and postgraduate student currently researching new ways of characterising uncertainty in mathematical geophysical and climate models.
+Read my <a href="/blog">blog</a> and about my <a href="/research">research</a> for more details!
+</center>
+<p><br></p>
 
-<p>My <a href="/blog">blog</a> consists of various posts on interesting bits of maths and programming I come across and use.</p>
-
-<p>I also provide a list of <a href="/talks">talks</a> I have given over the years, from informal university seminars to conferences. I’ve included slides and links to any relevant code.</p>
-
-<p>More details to come soon!</p>
+<center>
+<figure>
+    <video width="750" autoplay="" loop="" muted="">
+        <source src="figures/single_gaussian.mp4" type="video/mp4"></source>
+    </video>
+    <figcaption>
+        A Gaussian approximation of stochastic samples (in red) of a position in the Gulf Stream.
+    </figcaption>
+</figure>
+</center>
 
           </div>
 
@@ -129,7 +124,7 @@
     <!-- Footer -->
 <footer class="fixed-bottom">
 	<div class="container mt-0">
-		© Copyright 2023 Liam  Blake. Last updated: April 12, 2023.
+		© Copyright 2023 Liam  Blake. Last updated: June 24, 2023.
 	</div>
 </footer>
 
