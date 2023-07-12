@@ -6,7 +6,7 @@ permalink: /
 
 <center>
 Hi there! I'm an applied mathematician and postgraduate student currently researching new ways of characterising uncertainty in mathematical geophysical and climate models.
-Read my <a href="/blog">blog</a> and about my <a href="/research">research</a> for more details!
+Read about my <a href="/research">research</a> for more details!
 </center>
 <br>
 
