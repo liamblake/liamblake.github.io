@@ -24,6 +24,14 @@ I have tutored the following courses:
 - [Statistical Modelling & Inference II](https://www.adelaide.edu.au/course-outlines/104843/1/sem-2/2023): A second-year course covering statistical methods, including estimation, hypothesis esting, linear models, and maximum likelihood methods.
 - [Mathematics IM](https://www.adelaide.edu.au/course-outlines/013617/1/sem-1/2022), [IA](https://www.adelaide.edu.au/course-outlines/019786/1/sem-2/2022), and [IB](https://www.adelaide.edu.au/course-outlines/009786/2/sem-1/2022): A set of introductory first-year courses to calculus and linear algebra, taken by all mathematics and engineering students.
 
+Here are a few pieces of anonymous student feedback on my teaching, as surveyed each semester:
+
+> "Very engaging and was very approachable. Tried to make the course more interesting with his charisma."
+
+> "Liam creates an interactive and engaging environment in tutorials. I appreciate his personal experiences and opinions that he shares, to make the content more applicable. Liam also provides really kind and constructive feedback."
+
+> "Liam was one of the best teachers I've had at the university. He was very clear in his explanations of course material and often delivered concepts in particularly 'down–to–earth' terms that made them easier to understand."
+
 I have additionally been a marker/grader for the following courses:
 
 - Fluid Mechanics III.
