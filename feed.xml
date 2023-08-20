@@ -1,2 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://liamblake.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://liamblake.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-07-12T07:37:35+00:00</updated><id>https://liamblake.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://liamblake.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://liamblake.github.io/" rel="alternate" type="text/html" /><updated>2023-08-20T09:46:28+00:00</updated><id>http://liamblake.github.io/feed.xml</id><title type="html">Liam Blake</title><subtitle>Applied mathematician &amp; postgraduate student</subtitle><entry><title type="html">The finite-time Lyapounov exponent from probabilities</title><link href="http://liamblake.github.io/2023/07/14/ftle_uncertainty_initial_condition/" rel="alternate" type="text/html" title="The finite-time Lyapounov exponent from probabilities" /><published>2023-07-14T00:00:00+00:00</published><updated>2023-07-14T00:00:00+00:00</updated><id>http://liamblake.github.io/2023/07/14/ftle_uncertainty_initial_condition</id><content type="html" xml:base="http://liamblake.github.io/2023/07/14/ftle_uncertainty_initial_condition/"><![CDATA[<p>Suppose we have an $n$-dimensional dynamical system given by the ordinary differential equation
+\(\frac{\mathrm{d}w}{\mathrm{d}t} = u\left(w, t\right).\)</p>
+
+<p>The FTLE is a generalisation</p>
+
+<p>Below is an example of the finite-time Lyapunov exponent computed over a region of the Gulf Stream, in the North Atlantic ocean.</p>
+
+<p>We then ask the question “in which direction is there the most stretching?”.</p>
+
+<p>There is a slightly different perspective we can employ, where instead of thinking of a deterministic</p>
+
+<p>(e.g. see Balasuriya 2020)</p>
+
+<p>So, we fix an initial point $x \in \Omega_0$ and take a <strong>random</strong> perturbation $\epsilon z$, where $z \sim \mathcal{N}(0,I)$ and $0 &lt; \epsilon \ll 1$ is some small scaling parameter. Then, using the change of variables formula, we know that the probability density function of $w = F_0^t(x + \delta)$ satisfies 
+\(p_w(w) = \mathcal{N}\left(F_t^0\!\left(w\right); 0, \epsilon^2 I \right)\left|\det{\nabla F_t^0(w)}\right|\)</p>
+
+<p>We once again ask the question - in what direction is there the most stretching? But we are now dealing with a random quantity, so this question is not as well-defined.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Balasuriya, Sanjeeva. 2020. “Uncertainty in Finite-Time Lyapunov Exponent Computations.” <em>Journal of Computational Dynamics</em> 7 (2): 313–37. <a href="https://doi.org/10.3934/jcd.2020013">https://doi.org/10.3934/jcd.2020013</a>.</li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[Explaining how the finite-time Lyapunov exponent of a dynamical system can be equivalently formulated when the initial conditions follows some probabilitty distribution.]]></summary></entry></feed>

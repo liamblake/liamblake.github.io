@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Liam Blake</title>
+ <link href="http://liamblake.github.io/atom.xml" rel="self"/>
+ <link href="http://liamblake.github.io/"/>
+ <updated>2023-08-20T09:46:28+00:00</updated>
+ <id>http://liamblake.github.io</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>The finite-time Lyapounov exponent from probabilities</title>
+   <link href="http://liamblake.github.io/2023/07/14/ftle_uncertainty_initial_condition/"/>
+   <updated>2023-07-14T00:00:00+00:00</updated>
+   <id>http://liamblake.github.io/2023/07/14/ftle_uncertainty_initial_condition</id>
+   <content type="html">&lt;p&gt;Suppose we have an $n$-dimensional dynamical system given by the ordinary differential equation
+\(\frac{\mathrm{d}w}{\mathrm{d}t} = u\left(w, t\right).\)&lt;/p&gt;
+
+&lt;p&gt;The FTLE is a generalisation&lt;/p&gt;
+
+&lt;p&gt;Below is an example of the finite-time Lyapunov exponent computed over a region of the Gulf Stream, in the North Atlantic ocean.&lt;/p&gt;
+
+&lt;p&gt;We then ask the question “in which direction is there the most stretching?”.&lt;/p&gt;
+
+&lt;p&gt;There is a slightly different perspective we can employ, where instead of thinking of a deterministic&lt;/p&gt;
+
+&lt;p&gt;(e.g. see Balasuriya 2020)&lt;/p&gt;
+
+&lt;p&gt;So, we fix an initial point $x \in \Omega_0$ and take a &lt;strong&gt;random&lt;/strong&gt; perturbation $\epsilon z$, where $z \sim \mathcal{N}(0,I)$ and $0 &amp;lt; \epsilon \ll 1$ is some small scaling parameter. Then, using the change of variables formula, we know that the probability density function of $w = F_0^t(x + \delta)$ satisfies 
+\(p_w(w) = \mathcal{N}\left(F_t^0\!\left(w\right); 0, \epsilon^2 I \right)\left|\det{\nabla F_t^0(w)}\right|\)&lt;/p&gt;
+
+&lt;p&gt;We once again ask the question - in what direction is there the most stretching? But we are now dealing with a random quantity, so this question is not as well-defined.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Balasuriya, Sanjeeva. 2020. “Uncertainty in Finite-Time Lyapunov Exponent Computations.” &lt;em&gt;Journal of Computational Dynamics&lt;/em&gt; 7 (2): 313–37. &lt;a href=&quot;https://doi.org/10.3934/jcd.2020013&quot;&gt;https://doi.org/10.3934/jcd.2020013&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+
+</feed>

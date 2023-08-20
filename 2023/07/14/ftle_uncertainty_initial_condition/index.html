@@ -11,7 +11,7 @@
 
   <title>
     
-      Talks &middot; Liam Blake
+      The finite-time Lyapounov exponent from probabilities &middot; Liam Blake
     
   </title>
 
@@ -94,7 +94,7 @@
       
         
           
-            <a class="sidebar-nav-item active" href="/talks/">Talks</a>
+            <a class="sidebar-nav-item" href="/talks/">Talks</a>
           
         
       
@@ -106,51 +106,40 @@
 
 
     <div class="content container">
-      <div class="page">
-  <center><h1 class="page-title">Talks</h1></center>
-  <p>A collection of talks I have given, some more formal than others. Slides and Github repositories are linked where available.</p>
+      <div class="post">
+  <h1 class="post-title">The finite-time Lyapounov exponent from probabilities</h1>
+  <span class="post-date">14 Jul 2023</span>
+  <p>Suppose we have an $n$-dimensional dynamical system given by the ordinary differential equation
+\(\frac{\mathrm{d}w}{\mathrm{d}t} = u\left(w, t\right).\)</p>
 
-<!-- TODO: Add abstracts-->
+<p>The FTLE is a generalisation</p>
+
+<p>Below is an example of the finite-time Lyapunov exponent computed over a region of the Gulf Stream, in the North Atlantic ocean.</p>
+
+<p>We then ask the question “in which direction is there the most stretching?”.</p>
+
+<p>There is a slightly different perspective we can employ, where instead of thinking of a deterministic</p>
+
+<p>(e.g. see Balasuriya 2020)</p>
+
+<p>So, we fix an initial point $x \in \Omega_0$ and take a <strong>random</strong> perturbation $\epsilon z$, where $z \sim \mathcal{N}(0,I)$ and $0 &lt; \epsilon \ll 1$ is some small scaling parameter. Then, using the change of variables formula, we know that the probability density function of $w = F_0^t(x + \delta)$ satisfies 
+\(p_w(w) = \mathcal{N}\left(F_t^0\!\left(w\right); 0, \epsilon^2 I \right)\left|\det{\nabla F_t^0(w)}\right|\)</p>
+
+<p>We once again ask the question - in what direction is there the most stretching? But we are now dealing with a random quantity, so this question is not as well-defined.</p>
+
+<h2 id="references">References</h2>
 <ul>
-  <li>
-    <p><strong>A Gaussian mixture model for uncertainty propagation in the North Atlantic</strong> <br />
-<em>South Australian ANZIAM meeting</em> <br />
-16th June 2023, in Adelaide, Australia. <br />
-<a href="/slides/sa_anziam_2023/LBlake_slides.pptx">Slides</a>.</p>
-  </li>
-  <li>
-    <p><strong>Lagrangian Coherent Structures</strong> <br />
-<em>The University of Adelaide mathematics postgraduate seminars</em> <br />
-3rd March 2023, in Adelaide, Australia. <br />
-<a href="/slides/lcs/slides.html#/title-slide">Slides</a>. <a href="https://github.com/liamblake/lcs-talk">Github</a>.</p>
-  </li>
-  <li>
-    <p><strong>A computable characterisation of model uncertainty</strong> <br />
-<a href="https://smp.uq.edu.au/anziam-2023"><em>ANZIAM 2023</em></a> <br />
-6th February 2023, in Cairns, Australia. <br />
-<a href="/slides/anziam2023/anziam_slides.html#/title-slide">Slides</a>.</p>
-  </li>
-  <li>
-    <p><strong>A computable Gaussian approximation for model uncertainty</strong> <br />
-<em>South Australian ANZIAM meeting</em> <br />
-7th November 2022, in Adelaide, Australia. <br />
-<a href="/slides/sa_anziam_2022/LBlake_slides.html#/title-slide">Slides</a></p>
-  </li>
-  <li>
-    <p><strong>One way of defining the Itô integral</strong> <br />
-<em>The University of Adelaide mathematics postgraduate seminars</em> <br />
-12th August 2022, in Adelaide, Australia. <br />
-<a href="/slides/ito_postgrad_slides.pdf">Slides</a>.</p>
-  </li>
-  <li>
-    <p><strong>Identifying Lagrangian Coherent Structures with Fuzzy Consensus Clustering</strong> <br />
-<em>AMSIConnect 2021</em> <br />
-9th February 2021, online. <br />
-<a href="/slides/amsi_connect_slides.pdf">Slides</a>. <a href="https://github.com/liamblake/AMSI-VSR-2020-21">Github</a>.</p>
-  </li>
+  <li>Balasuriya, Sanjeeva. 2020. “Uncertainty in Finite-Time Lyapunov Exponent Computations.” <em>Journal of Computational Dynamics</em> 7 (2): 313–37. <a href="https://doi.org/10.3934/jcd.2020013">https://doi.org/10.3934/jcd.2020013</a>.</li>
 </ul>
 
 
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
 </div>
 
     </div>

@@ -1,1 +1,1 @@
-My personal website, built with Jekyll and the [al-folio](https://github.com/alshedivat/al-folio) template by [alshedivat](https://github.com/alshedivat).
+My personal [website](https://liamblake.github.io/), built using [Jekyll](https://jekyllrb.com/) and a fork of the [Poole/Hyde theme](https://github.com/poole/hyde) that I've ripped apart.
