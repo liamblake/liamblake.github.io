@@ -1,7 +1,8 @@
 ---
-layout: about
-title: Home
+layout: page
+title: About
 permalink: /
+nav_order: 1
 ---
 
 <center>
@@ -16,7 +17,8 @@ Read about my <a href="/research">research</a> for more details!
         <source src="figures/single_gaussian.mp4" type="video/mp4">
     </video>
     <figcaption>
-        A Gaussian approximation of stochastic samples (in red) of a position in the Gulf Stream.
+        A <a href="https://arxiv.org/abs/2306.17331">Gaussian approximation</a> of stochastic samples (in red) of a drifter trajectory in the Gulf Stream.
     </figcaption>
 </figure>
 </center>
+
