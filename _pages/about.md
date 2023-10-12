@@ -17,7 +17,7 @@ Read about my <a href="/research">research</a> for more details!
         <source src="figures/single_gaussian.mp4" type="video/mp4">
     </video>
     <figcaption>
-        A <a href="https://arxiv.org/abs/2306.16334">Gaussian approximation</a> of stochastic samples (in red) of a drifter trajectory in the Gulf Stream.
+        A <a href="https://arxiv.org/abs/2309.16334">Gaussian approximation</a> of stochastic samples (in red) of a drifter trajectory in the Gulf Stream.
     </figcaption>
 </figure>
 </center>
