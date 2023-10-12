@@ -12,5 +12,5 @@ I am combining stochastic processes, dynamical systems, and scientific computing
 
 
 <h2>Publications</h2>
-- **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2023). *Explicit characterisation of stochastic differential equation linearisations*. In review.
+- **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2023). *Explicit characterisation of stochastic differential equation linearisations*. In review. [10.48550/arXiv.2309.16334](https://arxiv.org/abs/2309.16334).
 
