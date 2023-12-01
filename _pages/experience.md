@@ -28,6 +28,8 @@ I have tutored the following courses:
 
 Here are a few pieces of anonymous student feedback on my teaching, as surveyed each semester:
 
+> "Liam genuinely cares. His tutorials actively encourage student participation as we work through problems together, with him providing intuitive explanations to help in understanding not only the processes, but the physical interpretation and a general understanding of the underlying principles. His assignment feedback is well thought out and at times quite detailed, showing genuine effort to give helpful and constructive feedback. He has been a highlight of the course throughout the semester"
+
 > "Very engaging and was very approachable. Tried to make the course more interesting with his charisma."
 
 > "Liam creates an interactive and engaging environment in tutorials. I appreciate his personal experiences and opinions that he shares, to make the content more applicable. Liam also provides really kind and constructive feedback."
