@@ -21,6 +21,7 @@ nav_order: 3
 During my MPhil at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a tutor and marker for a range of undergraduate courses.
 I have tutored the following courses:
 
+- [Fluid Mechanics III](https://www.adelaide.edu.au/course-outlines/001733/1/sem-1/): A third-year course covering fluid dynamics, including the derivation of physical laws and practical simulation methods.
 - [Partial Differential Equations and Waves III](https://www.adelaide.edu.au/course-outlines/107353/1/sem-2/2023): A third-year course covering partial differential equations, including formulation, analytical and numerical solutions, and interpretation.
 - [Professional Practice III](https://www.adelaide.edu.au/course-outlines/109284/1/sem-1/2023): A professional development course for third-year computer science and mathematics students, in which I worked closely with my students to develop their job application, interview, teamwork, and communication skills.
 - [Statistical Modelling & Inference II](https://www.adelaide.edu.au/course-outlines/104843/1/sem-2/2023): A second-year course covering statistical methods, including estimation, hypothesis esting, linear models, and maximum likelihood methods.
@@ -38,12 +39,13 @@ Here are a few pieces of anonymous student feedback on my teaching, as surveyed 
 
 I have additionally been a marker/grader for the following courses:
 
-- Fluid Mechanics III.
+- Fluid Mechanics III
+- Modelling with Ordinary Differential Equations III
 - Partial Differential Equations and Waves III.
-- Professional Practice III.
-- Differential Equations for Engineers II.
-- Multivariable and Complex Calculus II.
-- Statistical Modelling & Inference II.
-- Statistical and Numerical Methods II.
-- Mathematics IA, IB.
+- Professional Practice III
+- Differential Equations for Engineers II
+- Multivariable and Complex Calculus II
+- Statistical Modelling & Inference II
+- Statistical and Numerical Methods II
+- Mathematics IA and IB
 
