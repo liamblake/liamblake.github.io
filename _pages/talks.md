@@ -12,7 +12,7 @@ A collection of talks I have given, some more formal than others. Slides and Git
 - **A Gaussian mixture model for uncertainty propagation in the North Atlantic** <br>
   *South Australian ANZIAM meeting* <br>
   16th June 2023, in Adelaide, Australia. <br>
-  [Slides](/slides/sa_anziam_2023/LBlake_slides.pptx).
+  [Slides](/slides/sa_anziam_2023.pptx).
 
 - **Lagrangian Coherent Structures** <br>
   *The University of Adelaide mathematics postgraduate seminars* <br>
