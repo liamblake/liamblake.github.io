@@ -29,7 +29,9 @@ I was involved with the delivery of two courses:
 During my time at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a tutor and marker for a range of undergraduate courses.
 I have tutored the following courses:
 
+- [Decision Science PG](https://www.adelaide.edu.au/course-outlines/110039/1/tri-3/2024/): A postgraduate course covering simulation techniques in the support of decision making.
 - [Fluid Mechanics III](https://www.adelaide.edu.au/course-outlines/001733/1/sem-1/): A third-year course covering fluid dynamics, including the derivation of physical laws and practical simulation methods.
+- [Modelling with Ordinary Differential Equations III](https://www.adelaide.edu.au/course-outlines/107351/1/sem-1/): A third-year course covering ordinary differential equations and their formulation, numerical solution, analysis, and application to a range of business and scientific settings.
 - [Partial Differential Equations and Waves III](https://www.adelaide.edu.au/course-outlines/107353/1/sem-2/2023): A third-year course covering partial differential equations, including formulation, analytical and numerical solutions, and interpretation.
 - [Professional Practice III](https://www.adelaide.edu.au/course-outlines/109284/1/sem-1/2023): A professional development course for third-year computer science and mathematics students, in which I worked closely with my students to develop their job application, interview, teamwork, and communication skills.
 - [Statistical Modelling & Inference II](https://www.adelaide.edu.au/course-outlines/104843/1/sem-2/2023): A second-year course covering statistical methods, including estimation, hypothesis esting, linear models, and maximum likelihood methods.
