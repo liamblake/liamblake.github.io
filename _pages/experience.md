@@ -10,15 +10,23 @@ nav_order: 3
 
 ## Education
 
-- Master of Philosophy (Applied Mathematics), ongoing, [The University of Adelaide](https://www.adelaide.edu.au/), Australia. <br>
-  **Dissertation title:** *Computable characterisations of uncertainty in dynamical systems*.
+- Master of Philosophy (Applied Mathematics), 2024, [The University of Adelaide](https://www.adelaide.edu.au/), Australia. <br>
+  **Dissertation title:** *Computable Characterisations of Uncertainty in Differential Equations*.
 
 - Bachelor of Mathematical Sciences (Advanced), 2021, [The University of Adelaide](https://www.adelaide.edu.au/), Australia.
 
 
 ## Teaching
+In April of 2024, I undertook a three-week teaching visit to the Ocean University of China, in the lovely city of Qingdao. 
+This opportunity was part of [Haide College](http://haide.ouc.edu.cn/hdenglish/ABOUTHAIDE/list.htm), a joint initiative between the University of Adelaide and the Ocean University of China.
+I was involved with the delivery of two courses:
 
-During my MPhil at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a tutor and marker for a range of undergraduate courses.
+- Computational Bayesian Statistics, a fourth year course covering Bayesian modelling approaches with an emphasis on computational techniques. 
+
+- Data Science, a third year course covering the mathematical formulation and implementation of modelling approaches in data science.
+
+
+During my time at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a tutor and marker for a range of undergraduate courses.
 I have tutored the following courses:
 
 - [Fluid Mechanics III](https://www.adelaide.edu.au/course-outlines/001733/1/sem-1/): A third-year course covering fluid dynamics, including the derivation of physical laws and practical simulation methods.
@@ -39,6 +47,7 @@ Here are a few pieces of anonymous student feedback on my teaching, as surveyed 
 
 I have additionally been a marker/grader for the following courses:
 
+- Decision Science PG
 - Fluid Mechanics III
 - Modelling with Ordinary Differential Equations III
 - Partial Differential Equations and Waves III.
