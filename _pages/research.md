@@ -15,7 +15,7 @@ My completed thesis is available [here](https://github.com/liamblake/mphil-thesi
 
 
 <h2>Publications</h2>
-- **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2023). *Rigorous Convergence Bounds for Stochastic Differential Equations with Application to Uncertainty Quantification*. In review. SSRN: [https://ssrn.com/abstract=5043181](https://ssrn.com/abstract=5043181)
+- **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2024). *Rigorous Convergence Bounds for Stochastic Differential Equations with Application to Uncertainty Quantification*. In review. SSRN: [https://ssrn.com/abstract=5043181](https://ssrn.com/abstract=5043181)
 
 - **Liam Blake**. *Computable Characterisations of Uncertainty in Differential Equations* (2024). MPhil Thesis. 
 
