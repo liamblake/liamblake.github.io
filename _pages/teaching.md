@@ -1,12 +1,12 @@
 ---
 layout: page
 permalink: /teaching/
-title: Experience
+title: Teaching
 nav: true
 nav_order: 3
 ---
 
-*This pages details my education, academic, and teaching experience. For an overview of my industry and volunteering experience, please see my [Linkedin profile](https://www.linkedin.com/in/liam-blake/).*
+*This pages details my teaching experience. For an overview of my industry and volunteering experience, please see my [Linkedin profile](https://www.linkedin.com/in/liam-blake/).*
 
 ## Education
 
