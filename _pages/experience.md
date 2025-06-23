@@ -17,19 +17,23 @@ nav_order: 3
 
 
 ## Teaching
-In April of 2024, I undertook a three-week teaching visit to the Ocean University of China, in the lovely city of Qingdao. 
-This opportunity was part of [Haide College](http://haide.ouc.edu.cn/hdenglish/ABOUTHAIDE/list.htm), a joint initiative between the University of Adelaide and the Ocean University of China.
-I was involved with the delivery of two courses:
+I have been closely involved with [Haide College](http://haide.ouc.edu.cn/hdenglish/ABOUTHAIDE/list.htm), a joint initiative between the University of Adelaide and the Ocean University of China.
+This has involved on-site teaching in the lovely city of Qingdao, Shandong. 
+I have assisted with the delivery of:
 
-- Computational Bayesian Statistics, a fourth year course covering Bayesian modelling approaches with an emphasis on computational techniques. 
+- Computational Bayesian Statistics: a fourth year course covering Bayesian modelling approaches with an emphasis on computational techniques. 
 
-- Data Science, a third year course covering the mathematical formulation and implementation of modelling approaches in data science.
+- Data Science: a third year course covering the mathematical formulation and implementation of modelling approaches in data science.
 
+- Probability & Statistics: a second year course covering basic statistics and probability theory. 
 
-During my time at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a tutor and marker for a range of undergraduate courses.
-I have tutored the following courses:
+- Projects in Mathematics: a second year course teaching students the fundamentals of mathematical writing, proof, and communication through a series of projects across both pure and applied mathematics. 
+
+During my time at the University of Adelaide, I had the opportunity to work casually within the School of Computer and Mathematical Sciences as a lecturer, tutor and marker for a range of undergraduate courses.
+I have taught the following courses:
 
 - [Decision Science PG](https://www.adelaide.edu.au/course-outlines/110039/1/tri-3/2024/): A postgraduate course covering simulation techniques in the support of decision making.
+- [Capstone Project in Mathematics III](https://www.adelaide.edu.au/course-outlines/107896/1/sem-2/2024/): A third-year course that involves a small group of students working on an open-ended research project. I developed the project, lectures, practical material, and assessment for a group of 15 students and guided them throughout the semester. 
 - [Fluid Mechanics III](https://www.adelaide.edu.au/course-outlines/001733/1/sem-1/): A third-year course covering fluid dynamics, including the derivation of physical laws and practical simulation methods.
 - [Modelling with Ordinary Differential Equations III](https://www.adelaide.edu.au/course-outlines/107351/1/sem-1/): A third-year course covering ordinary differential equations and their formulation, numerical solution, analysis, and application to a range of business and scientific settings.
 - [Partial Differential Equations and Waves III](https://www.adelaide.edu.au/course-outlines/107353/1/sem-2/2023): A third-year course covering partial differential equations, including formulation, analytical and numerical solutions, and interpretation.
@@ -50,6 +54,8 @@ Here are a few pieces of anonymous student feedback on my teaching, as surveyed 
 I have additionally been a marker/grader for the following courses:
 
 - Decision Science PG
+- Computational Bayesian Statistics III
+- Data Science III
 - Fluid Mechanics III
 - Modelling with Ordinary Differential Equations III
 - Partial Differential Equations and Waves III.
