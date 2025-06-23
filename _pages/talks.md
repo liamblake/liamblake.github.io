@@ -9,6 +9,11 @@ nav_order: 4
 A collection of talks I have given, some more formal than others. Slides and Github repositories are linked where available. 
 
 <!-- TODO: Add abstracts-->
+- **The Fokker-Planck equation** <br>
+  *The University of Adelaide mathematics postgraduate seminars* <br>
+  11th June, 2025, in Adelaide, Australia <br>
+  [Slides](/slides/fp_postgrad_slides.pdf)
+
 - **A Gaussian mixture model for uncertainty propagation in the North Atlantic** <br>
   *South Australian ANZIAM meeting* <br>
   16th June 2023, in Adelaide, Australia. <br>
