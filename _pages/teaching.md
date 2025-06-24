@@ -8,15 +8,6 @@ nav_order: 3
 
 *This pages details my teaching experience. For an overview of my industry and volunteering experience, please see my [Linkedin profile](https://www.linkedin.com/in/liam-blake/).*
 
-## Education
-
-- Master of Philosophy (Applied Mathematics), 2024, [The University of Adelaide](https://www.adelaide.edu.au/), Australia. <br>
-  **Dissertation title:** *Computable Characterisations of Uncertainty in Differential Equations*.
-
-- Bachelor of Mathematical Sciences (Advanced), 2021, [The University of Adelaide](https://www.adelaide.edu.au/), Australia.
-
-
-## Teaching
 I have been closely involved with [Haide College](http://haide.ouc.edu.cn/hdenglish/ABOUTHAIDE/list.htm), a joint initiative between the University of Adelaide and the Ocean University of China.
 This has involved on-site teaching in the lovely city of Qingdao, Shandong. 
 I have assisted with the delivery of:
