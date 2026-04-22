@@ -13,13 +13,23 @@ Uncertainty can arise from many sources, including measurement error and unresol
 I combined stochastic processes, dynamical systems, and scientific computing (in [Julia](https://julialang.org/)) to understand how this uncertainty impacts predictions from a model, without having to resort to computationally expensive simulation.
 My completed thesis is available [here](https://github.com/liamblake/mphil-thesis). 
 
-<h2>Publications</h2>
+<h2>Publications \& Pre-prints</h2>
 - **Liam A. A. Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2025). *Rigorous Convergence Bounds for Stochastic Differential Equations with Application to Uncertainty Quantification*. Physica D: Nonlinear Phenomena 481, 134742. DOI: [10.1016/j.physd.2025.134742](https://doi.org/10.1016/j.physd.2025.134742)
 
 - **Liam A. A. Blake**. *Computable Characterisations of Uncertainty in Differential Equations* (2024). MPhil Thesis. 
 
-<h2>Pre-prints</h2>
 - **Liam Blake**, [John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), [Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) (2024). *Unifying Lyapunov exponents with probabilistic uncertainty quantification*. [10.48550/arXiv.2403.05085](https://arxiv.org/abs/2403.05085).
 
+<h2>Conferences \& Workshops</h2>
+- 11th International Symposium on Data Assimilation (Melbourne, Australia, 2025)
+- MATRIX-AMSI Dynamical Systems Student Symposium (Creswick, Australia, 2025) (talk)
+- ANZIAM SA Mini-Meeting 2025 (Adelaide, Australia, 2025) (talk)
+- Australian Data Science Network Conference (Adelaide, Australia, 2023)
+- Introduction to Tracking and Sensor Fusion Workshop (Adelaide, Australia, 2025)
+- ANZIAM SA Mini-Meeting 2023 (Adelaide, Australia, 2023) (talk)
+- ANZIAM 2023 (Cairns, Australia, 2023) (talk)
+- ANZIAM SA Mini-Meeting 2022 (Adelaide, Australia, 2022) (talk)
 
+
+ 
 
