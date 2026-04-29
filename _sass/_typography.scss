@@ -134,3 +134,14 @@ blockquote {
     }
   }
 }
+
+@font-face {
+  font-family: 'Computer Modern Sans';
+  src: url('fonts/cmunss.woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Computer Modern Sans", sans-serif;
+}

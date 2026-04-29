@@ -1,0 +1,59 @@
+- title: The Fokker-Planck equation
+  event: The University of Adelaide mathematics postgraduate seminars
+  date: 2025-06-11
+  location: Cairns, Australia
+  slides: fp_postgrad_slides.pdf
+
+- title: A Gaussian mixture model for uncertainty propagation in the North Atlantic
+  event: South Australian ANZIAM meeting
+  date: 2023-06-16
+  location: Cairns, Australia
+  slides: sa_anziam_2023.pptx
+
+- title: Lagrangian Coherent Structures
+  event: The University of Adelaide mathematics postgraduate seminars
+  date: 2023-03-03
+  slides: lcs/slides.html#/title-slide
+  location: Cairns, Australia
+  github: lcs-talk
+
+- title: A computable characterisation of model uncertainty
+  event: ANZIAM 2023
+  date: 2023-02-06
+  location: Cairns, Australia
+  slides: anziam2023/anziam_slides.html#/title-slide
+
+- title: A computable Gaussian approximation for model uncertainty
+  event: South Australian ANZIAM meeting
+  date: 2022-11-07
+  location: Adelaide, Australia
+  slides: sa_anziam_2022/LBlake_slides.html#/title-slide
+
+- title: One way of defining the Itô integral
+  event: The University of Adelaide mathematics postgraduate seminars
+  date: 2022-08-12
+  location: Adelaide, Australia
+  slides: ito_postgrad_slides.pdf
+
+- title: Identifying Lagrangian Coherent Structures with Fuzzy Consensus Clustering
+  event: AMSIConnect 2021
+  date: 2021-02-09
+  location: online
+  slides: amsi_connect_slides.pdf
+  github: AMSI-VSR-2020-21
+
+- title: A Gaussian mixture filter with error-informed splitting for data assimilation
+  event: ANZIAM 2026
+  date: 2026-02-10
+  location: Canberra, Australia
+
+- title: Stochastic Lyapunov exponents and vectors 
+  event: MATRIX Student Symposium on Dynamical Systems
+  date: 2025-09-19
+  location: Creswick, Australia 
+
+- title: Uncertainty quantification and data assimilation with stochastic sensitivity 
+  event: SA ANZIAM Meeting 
+  date: 2025-06-20
+  location: Adelaide, Australia
+
