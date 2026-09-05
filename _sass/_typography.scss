@@ -24,6 +24,7 @@ hr {
 }
 
 table {
+
   td,
   th {
     font-size: 1rem;
@@ -51,6 +52,7 @@ table.table a {
 
 .table-dark {
   background-color: transparent;
+
   &.table-bordered {
     border: 1px solid var(--global-divider-color) !important;
   }
@@ -136,12 +138,14 @@ blockquote {
 }
 
 @font-face {
-  font-family: 'Computer Modern Sans';
-  src: url('fonts/cmunss.woff') format('opentype');
+  font-family: 'Inter';
+  src: url('../fonts/Inter_18pt-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
+
+
 body {
-  font-family: "Computer Modern Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
