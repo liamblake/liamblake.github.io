@@ -14,7 +14,7 @@ nav_order: 2
 <!-- {% include bib_search.liquid %} -->
 
 I am currently a doctoral student at [the University of Adelaide](https://www.adelaide.edu.au/), where I am developing techniques for estimation and inference in mathematical models with unresolved components. 
-This work is supervised by [Associate Professor Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/), [Dr. John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean), and [Dr. Andrew Black](https://andxblack.github.io/).
+This work is supervised by [Associate Professor Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) and [Dr. John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean).
 
 Prior to this, I completed a Master of Philosophy (MPhil) in Applied Mathematics at [the University of Adelaide](https://www.adelaide.edu.au/), under the supervision of [Associate Professor Sanjeeva Balasuriya](https://sanji-balasuriya.github.io/) and [Dr. John Maclean](https://researchers.adelaide.edu.au/profile/john.maclean).
 My research looked at devising practical and computationally efficient methods for characterising uncertainty in geophysical systems, such as the ocean, atmosphere, and climate.
